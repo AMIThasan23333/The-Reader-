@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -7,11 +7,16 @@ const Header = () => {
     <div className='bg-gray-100'>
       <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
         <div className='relative flex items-center justify-between'>
-          <Link
-            href='/'
+          <NavLink
+            to='/'
             aria-label='proReader'
             title='proReader'
-            className='inline-flex items-center'
+            className={({isActive }) =>   
+          
+            isActive ? 'to-blue-800'  : 'text-gray-600'
+          
+          
+          }
           >
             <svg
               className='w-8 text-blue-400'
@@ -31,37 +36,49 @@ const Header = () => {
             <span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>
               proReader
             </span>
-          </Link>
+          </NavLink>
           <ul className='flex items-center hidden space-x-8 lg:flex'>
             <li>
-              <Link
-                href='/home'
+              <NavLink
+                to='/home'
                 aria-label='Home'
                 title='Home'
-                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                className={({isActive }) =>   
+                isActive ? 'text-red-600'  : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+              
+              
+              } 
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                href='/books'
-                aria-label='Books'
-                title='Books'
-                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+            <NavLink
+                to='/books'
+                aria-label='Home'
+                title='Home'
+                className={({isActive }) =>   
+                isActive ? 'text-red-600'  : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+              
+              
+              } 
               >
                 Books
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                href='/about'
-                aria-label='About us'
-                title='About us'
-                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+            <NavLink
+                to='/about'
+                aria-label='Home'
+                title='Home'
+                className={({isActive }) =>   
+                isActive ? 'text-red-600'  : 'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+              
+              
+              } 
               >
-                About us
-              </Link>
+                About
+              </NavLink>
             </li>
           </ul>
           <div className='lg:hidden'>
@@ -135,7 +152,7 @@ const Header = () => {
                     <ul className='space-y-4'>
                       <li>
                         <Link
-                          href='/'
+                          to='/'
                           aria-label='Home'
                           title='Home'
                           className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
@@ -145,7 +162,7 @@ const Header = () => {
                       </li>
                       <li>
                         <Link
-                          href='/books'
+                          to='/books'
                           aria-label='Books'
                           title='Books'
                           className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
@@ -155,7 +172,7 @@ const Header = () => {
                       </li>
                       <li>
                         <Link
-                          href='/about'
+                          to='/about'
                           aria-label='About Us'
                           title='About Us'
                           className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
