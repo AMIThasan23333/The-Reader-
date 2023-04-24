@@ -5,42 +5,16 @@ import Home from './components/Home';
 import ErrorPage from './components/ErrorPage';
 import About from './components/About';
 import Roots from './components/Roots';
+import router from './components/Routes';
 
 
-const router = createBrowserRouter([
 
-
-  {
-
-    path : '/',
-    element: <Roots></Roots>,
-    errorElement : <ErrorPage></ErrorPage>, 
-
-    children : [
-
-      {
-        path : '/',
-        element: <Home></Home>
-      },
-      {
-        path : '/home',
-        element: <Home></Home>
-      },
-
-      {
-        path : '/about',
-        element: <About></About>
-      }
-    ]
-  },
-])
 
 function App() {
+
   return (
 
     <div>
-    
-
        <RouterProvider router={router}></RouterProvider>
     </div>
 

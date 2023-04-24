@@ -12,7 +12,6 @@ const ErrorPage = () => {
   
   return (
     <>
-     
       <div className='flex flex-col min-h-[700px] justify-center items-center'>
         <h1 className='text-red-500'>{error.statusText || error.message}</h1>
       </div>
