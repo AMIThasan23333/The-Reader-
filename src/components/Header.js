@@ -49,7 +49,7 @@ const Header = () => {
               
               } 
               >
-                Home
+                Hom
               </NavLink>
             </li>
             <li>
